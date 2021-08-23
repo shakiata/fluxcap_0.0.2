@@ -36,7 +36,12 @@ local recipe = table.deepcopy(data.raw["recipe"]["nuclear-fuel"])
 local plutoniumfuel = table.deepcopy(data.raw["item"]["nuclear-fuel"])
 
 plutoniumfuel.name = "plutonium-fuel"
-
+plutoniumfuel.icons = {
+    {
+    icon = plutoniumfuel.icon,
+    tint = {r=0.75,b=0.25,g=0.25,a=0.25},
+    },
+}
 recipe.name = "plutonium-fuel-recipe"
 
 recipe.icons = {
