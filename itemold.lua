@@ -68,7 +68,7 @@ data:extend(
     {
         type = "item",
         name = "fluxcap",
-        icon = "__fluxcap__/graphics/fluxcapico.png",
+        icon = "__fluxcap__/graphics/fluxcap.png",
         icon_size = 64, icon_mipmaps = 4,
         flags = {"hidden"},
         subgroup = "other",
@@ -79,63 +79,25 @@ data:extend(
     {
       name = "fluxcap",
       type = "burner-generator",
-      icon = "__fluxcap__/graphics/fluxcapico.png",
+      icon = "__fluxcap__/graphics/fluxcap.png",
       icon_size = 64, icon_mipmaps = 4,
       flags = {"placeable-neutral","player-creation"},
       max_health = 4000,
       dying_explosion = "medium-explosion",
       corpse = "steam-engine-remnants",
-      collision_box = {{-1.5, -1}, {1.5, 1}},
-      selection_box = {{-1.25, -0.75}, {1.25, 0.75}},
-	  animation =
-      {
-		priority = "high",
-		width = 99,
-		height = 66,
-		frame_count = 1,
-		line_length = 1,
-		shift = {0, 0},
-	    north = {
-          filename = "__fluxcap__/graphics/fluxcap.png",
-		  priority = "high",
-		  width = 99,
-		  height = 66,
-		  frame_count = 1,
-		  line_length = 1,
-		  shift = {0, 0}
-	    },
-	    south = {
-          filename = "__fluxcap__/graphics/fluxcap.png",
-		  priority = "high",
-		  width = 99,
-		  height = 66,
-		  frame_count = 1,
-		  line_length = 1,
-		  shift = {0, 0}
-	    },
-	    east = {
-          filename = "__fluxcap__/graphics/fluxcapv.png",
-		  priority = "high",
-		  width = 66,
-		  height = 99,
-		  frame_count = 1,
-		  line_length = 1,
-		  shift = {0, 0}
-	    },
-	    west = {
-          filename = "__fluxcap__/graphics/fluxcapv.png",
-		  priority = "high",
-		  width = 66,
-		  height = 99,
-		  frame_count = 1,
-		  line_length = 1,
-		  shift = {0, 0}
-	    },
-	  },
-	  open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
-	  close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
+      collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
+      selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
       max_power_output = "1.21GW",
       minable = {mining_time = 1, result = "fluxcap"},
+      animation =
+  {
+    north = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
+    east = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation),
+    south = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
+    west = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation)
+  },
+    
+      -- idle_animation can also be specified
       burner =
       {
         fuel_category = "chemical",
