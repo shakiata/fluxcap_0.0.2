@@ -89,22 +89,36 @@ data:extend(
       selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
       max_power_output = "1.21GW",
       minable = {mining_time = 1, result = "fluxcap"},
-      animation = nil,
+      animation =
+  {
+    north = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
+    east = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation),
+    south = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
+    west = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation)
+  },
+    
+      -- idle_animation can also be specified
       burner =
       {
-      
         fuel_category = "chemical",
         effectivity = 2,
         fuel_inventory_size = 3,
         emissions_per_minute = 10,
+        smoke =
+        {
+          {
+            name = "smoke",
+            north_position = {0.9, 0.0},
+            east_position = {-2.0, -2.0},
+            deviation = {0.1, 0.1},
+            frequency = 9
+          }
+        }
       },
-    
-                
-      
       energy_source =
       {
         type = "electric",
-        usage_priority = "primary-output"
+        usage_priority = "secondary-output"
       }
     }})
     
