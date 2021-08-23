@@ -82,26 +82,20 @@ data:extend(
       icon = "__fluxcap__/graphics/fluxcap.png",
       icon_size = 64, icon_mipmaps = 4,
       flags = {"placeable-neutral","player-creation"},
-      max_health = 400,
+      max_health = 4000,
       dying_explosion = "medium-explosion",
       corpse = "steam-engine-remnants",
       collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
       selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
       max_power_output = "1.21GW",
       minable = {mining_time = 1, result = "fluxcap"},
-      animation =
-      {
-        north = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
-        east = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation),
-        south = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
-        west = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation)
-      },
+    
       -- idle_animation can also be specified
       burner =
       {
         fuel_category = "chemical",
-        effectivity = 0.5,
-        fuel_inventory_size = 1,
+        effectivity = 2,
+        fuel_inventory_size = 3,
         emissions_per_minute = 10,
         smoke =
         {
