@@ -128,7 +128,11 @@ data:extend{
         type = "recipe",
         enabled = true,
         ingredients = {
-            {"iron-plate", 100}
+            {"iron-plate", 300},
+            {"nuclear-reactor", 2},
+            {"processing-unit", 467},
+            {"steam-turbine", 57}
+
         },
         result = "fluxcap",
         icon = "__fluxcap__/graphics/fluxcap.png",
