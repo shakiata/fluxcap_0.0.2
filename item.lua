@@ -51,13 +51,13 @@ recipe.icons = {
     },
 }
 recipe.ingredients = {
-    {"plutonium", 10},
-    {"nuclear-fuel", 1}
+    {"plutonium", 20},
+    {"nuclear-fuel", 2}
 }
 recipe.result = "plutonium-fuel"
 recipe.enabled = true
-plutoniumfuel.fuel_value = "10GJ"
-plutoniumfuel.fuel_acceleration_multiplier = 15
+plutoniumfuel.fuel_value = "50GJ"
+plutoniumfuel.fuel_acceleration_multiplier = 25
 
 
 data:extend{plutonium,plutoniumfuel,recipe,plutoniumprocessing}
@@ -89,36 +89,22 @@ data:extend(
       selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
       max_power_output = "1.21GW",
       minable = {mining_time = 1, result = "fluxcap"},
-      animation =
-  {
-    north = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
-    east = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation),
-    south = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
-    west = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation)
-  },
-    
-      -- idle_animation can also be specified
+      animation = nil,
       burner =
       {
+      
         fuel_category = "chemical",
         effectivity = 2,
         fuel_inventory_size = 3,
         emissions_per_minute = 10,
-        smoke =
-        {
-          {
-            name = "smoke",
-            north_position = {0.9, 0.0},
-            east_position = {-2.0, -2.0},
-            deviation = {0.1, 0.1},
-            frequency = 9
-          }
-        }
       },
+    
+                
+      
       energy_source =
       {
         type = "electric",
-        usage_priority = "secondary-output"
+        usage_priority = "primary-output"
       }
     }})
     
@@ -133,6 +119,7 @@ data:extend{
         result = "fluxcap",
         icon = "__fluxcap__/graphics/fluxcap.png",
         icon_size = 64, icon_mipmaps = 4,
+        order = "a-a"
 
     }
 }
