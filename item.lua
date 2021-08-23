@@ -89,6 +89,13 @@ data:extend(
       selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
       max_power_output = "1.21GW",
       minable = {mining_time = 1, result = "fluxcap"},
+      animation =
+  {
+    north = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
+    east = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation),
+    south = util.table.deepcopy(data.raw.generator["steam-engine"].vertical_animation),
+    west = util.table.deepcopy(data.raw.generator["steam-engine"].horizontal_animation)
+  },
     
       -- idle_animation can also be specified
       burner =
@@ -123,6 +130,9 @@ data:extend{
         ingredients = {
             {"iron-plate", 100}
         },
-        result = "fluxcap"
+        result = "fluxcap",
+        icon = "__fluxcap__/graphics/fluxcap.png",
+        icon_size = 64, icon_mipmaps = 4,
+
     }
 }
