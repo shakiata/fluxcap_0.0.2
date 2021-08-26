@@ -13,7 +13,7 @@ local plutoniumprocessing = table.deepcopy(data.raw["recipe"]["uranium-processin
 plutoniumprocessing.name = "plutonium-processing"
 plutoniumprocessing.ingredients = {{"uranium-235", 10}}
 plutoniumprocessing.enabled = true
-plutoniumprocessing.order = "plutonium-processing"
+plutoniumprocessing.order = "k[plutonium-processing]"
 plutoniumprocessing.subgroup = "raw-resource"
 plutoniumprocessing.icons = {
     {
@@ -42,6 +42,7 @@ plutoniumfuel.icons = {
     tint = {r=0.75,b=0.25,g=0.25,a=0.25},
     },
 }
+plutoniumfuel.order = "q[plutonium-fuel]"
 recipe.name = "plutonium-fuel-recipe"
 
 recipe.icons = {
@@ -71,8 +72,8 @@ data:extend(
         icon = "__fluxcap__/graphics/fluxcapico.png",
         icon_size = 64, icon_mipmaps = 4,
         flags = {"hidden"},
-        subgroup = "other",
-        order = "t[item]-o[fluxcap]",
+        subgroup = "energy",
+        order = "f[item]-b[fluxcap]",
         stack_size = 10,
         place_result = "fluxcap"
       },
@@ -175,7 +176,7 @@ data:extend{
         result = "fluxcap",
         icon = "__fluxcap__/graphics/fluxcap.png",
         icon_size = 64, icon_mipmaps = 4,
-        order = "a-a"
+        order = "r[fluxcapacitorrecipe]"
 
     }
 }
