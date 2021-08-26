@@ -13,8 +13,8 @@ local plutoniumprocessing = table.deepcopy(data.raw["recipe"]["uranium-processin
 plutoniumprocessing.name = "plutonium-processing"
 plutoniumprocessing.ingredients = {{"uranium-235", 10}}
 plutoniumprocessing.enabled = true
-plutoniumprocessing.order = "k[plutonium-processing]"
-plutoniumprocessing.subgroup = "raw-resource"
+plutoniumprocessing.order = "l[plutonium-processing]"
+plutoniumprocessing.subgroup = "raw-material"
 plutoniumprocessing.icons = {
     {
         icon = plutoniumprocessing.icon,
