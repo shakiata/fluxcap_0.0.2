@@ -12,7 +12,7 @@ plutonium.icons = {
 local plutoniumprocessing = table.deepcopy(data.raw["recipe"]["uranium-processing"])
 plutoniumprocessing.name = "plutonium-processing"
 plutoniumprocessing.ingredients = {{"uranium-235", 10}}
-plutoniumprocessing.enabled = true
+plutoniumprocessing.enabled = false
 plutoniumprocessing.order = "l[plutonium-processing]"
 plutoniumprocessing.subgroup = "raw-material"
 plutoniumprocessing.icons = {
@@ -56,9 +56,10 @@ recipe.ingredients = {
     {"nuclear-fuel", 2}
 }
 recipe.result = "plutonium-fuel"
-recipe.enabled = true
+recipe.enabled = false
 plutoniumfuel.fuel_value = "50GJ"
 plutoniumfuel.fuel_acceleration_multiplier = 25
+plutoniumfuel.fuel_top_speed_multiplier = 2
 
 
 data:extend{plutonium,plutoniumfuel,recipe,plutoniumprocessing}
