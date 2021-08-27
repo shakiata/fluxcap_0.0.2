@@ -1,25 +1,25 @@
 --technology.lua
 
-data:extend(
-    {
+data:extend{{
         type = "technology",
         name = "plutonium-processing",
         icon_size = 256, icon_mipmaps = 4,
         icon = "__base__/graphics/technology/uranium-processing.png",
-        effects = 
-        {
+
+        effects =
+       {
             {
                 type = "unlock-recipe",
                 recipe = "plutonium-processing"
             },
             {
-                type = "unlock-recipe-recipe",
-                recipe = "plutonium-fuel"
+                type = "unlock-recipe",
+                recipe = "plutonium-fuel-recipe"
             },
         },
         prerequisites = {"uranium-processing", "kovarex-enrichment-process"},
         unit =
-        {
+       {
             ingredients =
             {
                 {"automation-science-pack", 1},
@@ -28,8 +28,8 @@ data:extend(
                 {"production-science-pack", 1}
             },
             time = 30,
-            count = 2000
-        },
+            count = 2000,
+       },
         order = "e-p-b-c"
     }
-)
+}
