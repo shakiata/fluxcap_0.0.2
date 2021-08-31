@@ -87,7 +87,6 @@ data:extend(
       max_health = 4000,
       dying_explosion = "medium-explosion",
       corpse = "steam-engine-remnants",
-      collision_box = {{-1.5, -1}, {1.5, 1}},
       selection_box = {{-1.25, -0.75}, {1.25, 0.75}},
 	  animation =
       {
